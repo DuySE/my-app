@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 class Todos extends Component {
     constructor(props) {
         super(props);
@@ -9,6 +11,7 @@ class Todos extends Component {
         return (        
             <div>
                 <div>
+                    <Link to="/blog"><button>Next</button></Link>
                     <span>Counter:</span>
                     <span>{this.props.counter}</span>
                 </div>

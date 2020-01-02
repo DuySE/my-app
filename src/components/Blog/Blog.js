@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BlogList from './BlogList';
+import { Link } from 'react-router-dom';
 
 class Blog extends Component {
     constructor(props) {
@@ -7,11 +8,12 @@ class Blog extends Component {
         this.state = { title: '', content: '' };
     }
     render() {
-        const { handleSubmit, handleDelete, blogs } = this.props;
+        const { handleSubmit, handleDelete, blogs, handleSave } = this.props;
         return (
             <div>
                 <h2 text-align="center">My Blog</h2>
-                <BlogList blogs={blogs} handleDelete={handleDelete} />
+                <Link to="/todo"><button>Next</button></Link>
+                <BlogList blogs={blogs} handleDelete={handleDelete} handleSave={handleSave} />
                 <div>
                     <span>
                         <label>Title:</label>

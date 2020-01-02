@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
+import { Link } from 'react-router-dom';
+
 class Todo extends Component {
     constructor(props) {
         super(props);
@@ -10,6 +12,7 @@ class Todo extends Component {
         return (
             <div>
                 <h3>TODO</h3>
+                <Link to="/"><button>Next</button></Link>
                 <TodoList items={this.props.items} handleDelete={this.props.handleDelete} />
                 <form onSubmit={e => {e.preventDefault(); this.props.handleSubmit()}}>
                     <label>What needs to be done?</label>

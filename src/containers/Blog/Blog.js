@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     handleSubmit: BlogActions.handleSubmit,
     handleDelete: BlogActions.handleDelete,
+    handleSave: BlogActions.handleSave,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Blog);

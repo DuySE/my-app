@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
+import BlogItem from './BlogItem';
 
-const BlogList = ({ handleDelete, blogs }) => (
-    <ul>
-        {blogs.map(blog => (<li key={blog.id}>
-                <span>{blog.title}</span>
-                <span>{blog.content}</span>
-                <button onClick={() => handleDelete(blog.id)}>Delete</button>
-            </li>))}
-    </ul>
-)
+class BlogList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { editable: false, newTitle: '', newContent: '' };
+    }
+    render() {
+        const { handleDelete, blogs, handleSave } = this.props;
+        return (
+            <ul>
+                {blogs.map(blog => (<li key={blog.id}>
+                    <BlogItem blog={blog} handleDelete={handleDelete} handleSave={handleSave} />
+                </li>))
+                }
+            </ul>
+        )
+    }
+}
 
 export default BlogList;
